@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double A - Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+<div class="auth-container">
+  <div class="form-box" id="loginBox">
+    <h2>Welcome Back,</h2>
+    <h4>With Double A, we turn your ideas into reality</h4>
+    <div class="error-message" id="loginError"></div>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button id="loginBtn">Sign In</button>
+    <p class="small-text">
+      Don't have an account?
+      <span class="switch-form" id="toRegister">Register</span>
+      <!-- تم إزالة رابط Forgot password -->
+    </p>
+  </div>
+
+  <div class="form-box" id="registerBox" style="display:none;">
+    <h2>Create Account</h2>
+    <div class="error-message" id="regError"></div>
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="email" id="regEmail" placeholder="Email">
+    <input type="password" id="regPassword" placeholder="Password">
+    <button id="registerBtn">Sign Up</button>
+    <p class="small-text">
+      Already have an account?
+      <span class="switch-form" id="toLogin">Login</span>
+    </p>
+  </div>
+
+  <div class="form-box" id="forgotBox" style="display:none;">
+    <h2>Contact Admin</h2>
+    <div class="error-message" id="forgotError"></div>
+    <input type="email" id="forgotEmail" placeholder="Enter your email">
+    <button id="forgotBtn">Contact Support</button>
+    <p class="small-text">
+      Remembered your password?
+      <span class="switch-form" id="backToLogin">Login</span>
+    </p>
+  </div>
+</div>
+
+<footer class="footer-bar">
+  <a href="https://www.instagram.com/double.a.media1/?igsh=em9wemZlc2l2ZGRn" target="_blank" class="insta-link">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+  </a>
+</footer>
+
+<script src="login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</body>
+</html>

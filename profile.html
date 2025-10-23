@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header id="navbar">
+    <img src="logo.png" alt="Double A Logo">
+    <div class="header-buttons">
+      <button id="backBtn">Back To Home</button>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <!-- ===== Profile Card ===== -->
+  <div class="profile-card fade-in visible">
+    <div class="tabs">
+      <button class="tab active" data-tab="purchases">Purchases</button>
+      <button class="tab" data-tab="bills">Bills</button>
+      <button class="tab" data-tab="info">My Account</button>
+    </div>
+
+    <div class="tab-contents">
+      <div class="tab-content" id="purchases">لا توجد مشتريات بعد.</div>
+      <div class="tab-content hidden" id="bills">لا توجد فواتير بعد.</div>
+      <div class="tab-content hidden" id="info">
+        <div class="profile-info">
+          <h3>Account Details</h3>
+          <div class="info-item">
+            <label>Username :</label>
+            <span id="infoUsername"></span>
+          </div>
+          <div class="info-item">
+            <label>E-mail :</label>
+            <span id="infoEmail"></span>
+          </div>
+          <div class="info-item">
+            <label>Date :</label>
+            <span id="infoDate"></span>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

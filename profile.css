@@ -1,0 +1,332 @@
+/* ===== أساسيات ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0e0e10;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== Navbar ===== */
+#navbar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(40, 40, 45, 0.9);
+  border-radius: 30px;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1000px;
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* ===== زر الرجوع وزر Logout ===== */
+button {
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 191, 255, 0.2);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.2);
+  text-align: center;
+}
+
+button:hover {
+  background: rgba(0, 191, 255, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 191, 255, 0.35);
+}
+
+.logout-btn {
+  background: rgba(255, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 0, 0, 0.45);
+  box-shadow: 0 12px 25px rgba(255, 0, 0, 0.35);
+}
+
+/* ===== Profile Card ===== */
+.profile-card {
+  background: linear-gradient(145deg, rgba(40,40,45,0.95), rgba(30,30,35,0.85));
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0,191,255,0.4);
+  width: 95%;
+  max-width: 1200px;
+  margin: 140px auto 50px;
+  padding: 40px 30px;
+  display: flex;
+  gap: 25px;
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.6s ease;
+  min-height: 70vh;
+}
+
+/* ===== Tabs عمودية ===== */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 0 0 180px;
+}
+
+.tab.active {
+  background: rgba(0, 191, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0,191,255,0.6);
+}
+
+.tab:hover {
+  transform: translateX(5px);
+}
+
+/* ===== محتوى التابات ===== */
+.tab-contents {
+  flex: 1;
+  background: rgba(30,30,35,0.9);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content:not(.hidden) {
+  display: block;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.95);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* ===== صورة الشعار ===== */
+#navbar img {
+  height: 90px; /* ارتفاع الصورة */
+  width: auto;  /* يحافظ على نسبة العرض للارتفاع */
+  object-fit: contain;
+}
+
+
+.profile-info {
+  text-align: right;
+  padding: 20px;
+}
+
+.info-item {
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-item label {
+  color: #00bfff;
+  font-weight: bold;
+  display: inline-block;
+  width: 150px;
+  text-shadow: 0 0 8px #00bfff;
+}
+
+.info-item span {
+  color: #fff;
+  font-weight: 500;
+}
+
+.edit-section {
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(0,191,255,0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(0,191,255,0.3);
+}
+
+.edit-section h4 {
+  color: #00bfff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+.edit-section input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 15px;
+}
+
+.edit-section input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.edit-section button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ===== تعديلات الموبايل فقط ===== */
+@media (max-width: 768px) {
+  /* النافبار على الموبايل */
+  #navbar {
+    width: 95%;
+    padding: 8px 15px;
+    border-radius: 20px;
+    top: 5px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #navbar img {
+    height: 40px;
+  }
+
+  .header-buttons {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    flex: 1;
+  }
+
+  /* كارت البروفايل على الموبايل */
+  .profile-card {
+    flex-direction: column;
+    margin: 100px auto 30px;
+    padding: 20px;
+    width: 98%;
+    gap: 20px;
+  }
+
+  /* التبويبات على الموبايل */
+  .tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: none;
+  }
+
+  .tab {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+
+  .tab:hover {
+    transform: translateY(-2px);
+  }
+
+  /* محتوى التبويبات على الموبايل */
+  .tab-contents {
+    padding: 15px;
+  }
+
+  .profile-info {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .info-item {
+    margin: 10px 0;
+    padding: 12px;
+    text-align: right;
+  }
+
+  .info-item label {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .info-item span {
+    font-size: 16px;
+    display: block;
+  }
+
+  .edit-section {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .edit-section input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+  #navbar {
+    padding: 6px 10px;
+  }
+
+  #navbar img {
+    height: 35px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .profile-card {
+    margin: 90px auto 20px;
+    padding: 15px;
+  }
+
+  .tab {
+    font-size: 13px;
+    padding: 10px 6px;
+    min-width: 100px;
+  }
+
+  .info-item {
+    padding: 10px;
+  }
+
+  .info-item label {
+    font-size: 13px;
+  }
+
+  .info-item span {
+    font-size: 15px;
+  }
+}
